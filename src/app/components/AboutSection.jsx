@@ -5,27 +5,28 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "Skills",
+    title: "Frontend",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
-      </ul>
+      <div className="grid grid-cols-2">
+        <ul className=" list-disc pl-2">
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>TypeScript</li>
+          <li>Sanity CMS</li>
+          <li>mySQL</li>
+        </ul>
+
+        <ul className="grid-col list-disc pl-2">
+          <li>Git</li>
+          <li>Node.js</li>
+          <li>MongoDB</li>
+          <li>Stripe</li>
+          <li>React Native</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
     ),
   },
   {
@@ -34,7 +35,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Microsoft Azure AI</li>
       </ul>
     ),
   },
@@ -71,13 +72,6 @@ const AboutSection = () => {
             >
               {" "}
               Skills{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
