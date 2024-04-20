@@ -5,7 +5,7 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "Frontend",
+    title: "Skills",
     id: "skills",
     content: (
       <div className="grid grid-cols-2">
