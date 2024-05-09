@@ -33,12 +33,13 @@ const Navbar = () => {
         >
           <div className="flex gap-3">
             <Image 
-              src="/spoon-fork.png"
+              src="/spoon-fork-nobg.png"
               alt="spoon fork logo"
               height={50}
               width={50}
             />
-            <p>Spoon Fork</p>
+            <span className="text-white bg-primary-500">Spoon</span>
+            <span className="text-yellow-500">Fork</span>
           </div>
 
         </Link>
