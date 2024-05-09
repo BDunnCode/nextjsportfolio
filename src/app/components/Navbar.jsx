@@ -38,8 +38,8 @@ const Navbar = () => {
               height={50}
               width={50}
             />
-            <span className="text-white bg-primary-500">Spoon</span>
-            <span className="text-yellow-500">Fork</span>
+            <span className="text-yellow-500">Spoon</span>
+            <span className="bg-primary-500">Fork</span>
           </div>
 
         </Link>
