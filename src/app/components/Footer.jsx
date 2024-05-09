@@ -10,7 +10,7 @@ const Footer = () => {
             width={40}
             alt="logo"
           />
-        <p className="text-slate-600">All rights reserved.</p>
+        <p className="text-slate-600"> All rights reserved.</p>
       </div>
     </footer>
   );
