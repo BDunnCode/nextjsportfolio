@@ -9,9 +9,9 @@ const projectsData = [
     id: 1,
     title: "Midwest Dota 2 League",
     description: "Sports League Home Website",
-    image: "/images/projects/md2l.png",
+    image: "/images/projects/md2l2.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/BDunnCode/nextjsecommerce5",
+    gitUrl: "",
     previewUrl: "#",
   },
   {
