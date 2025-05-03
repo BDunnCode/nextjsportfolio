@@ -39,8 +39,8 @@ const Navbar = () => {
               width={50}
             />
             <div className="flex gap-1 md:gap-2 lg:gap-3">
-              <span className="text-yellow-500">Spoon</span>
-              <span className="bg-primary-500">Fork</span>
+              <span className="text-yellow-500">TC</span>
+              <span className="bg-primary-500">2R</span>
             </div>
           </div>
         </Link>

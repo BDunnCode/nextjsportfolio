@@ -15,18 +15,20 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-center sm:justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-[57px] lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-yellow-600">
               Hello, I&apos;m{" "}
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
-                "Brian",
+                "Nudennie White",
                 1000,
-                "Full",
+                "Experienced",
                 1000,
-                "Web Developer",
+                "a Project Manager",
+                1000,
+                "an Android Developer",
                 1000,
               ]}
               wrapper="span"
@@ -54,8 +56,8 @@ const HeroSection = () => {
         >
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <Image
-              src="/6.png"
-              alt="hero image"
+              src="/dre-option-2.png"
+              alt="Hero Image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={300}
               height={300}
