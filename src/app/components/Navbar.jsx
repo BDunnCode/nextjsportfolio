@@ -33,7 +33,7 @@ const Navbar = () => {
         >
           <div className="flex gap-1 lg:gap-3 items-center">
             <Image 
-              src="/spoon-fork-nobg.png"
+              src="/nobg-logo.png"
               alt="spoon fork logo"
               height={50}
               width={50}

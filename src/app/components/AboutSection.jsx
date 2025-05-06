@@ -8,8 +8,8 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="grid grid-cols-2">
-        <ul className=" list-disc pl-2">
+      <div className="grid grid-cols-2 gap-5">
+        <ul className="grid-col list-disc pl-2">
           <li>Android</li>
           <li>Java</li>
           <li>C++</li>
@@ -121,7 +121,7 @@ const AboutSection = () => {
           height={500}
           alt="Styled Portrait"
         />
-        <div className="mt-4 md:mt-0 flex text-left flex-col h-full">
+        <div className="mt-4 md:mt-0 flex text-left flex-col h-full justify-center items-center">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
 

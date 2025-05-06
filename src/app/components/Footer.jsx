@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
       <div className="p-12 flex justify-center items-center gap-4">
           <Image 
-            src="/spoon-fork-nobg.png"
+            src="/nobg-logo.png"
             height={40}
             width={40}
             alt="logo"

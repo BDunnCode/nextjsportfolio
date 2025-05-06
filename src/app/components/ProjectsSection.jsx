@@ -1,60 +1,41 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import client from "../../sanity/lib/client";
 
-const projectsData = [
-  {
-    id: 1,
-    title: "Midwest Dota 2 League",
-    description: "Sports League Home Website",
-    image: "/images/projects/md2l2.png",
-    tag: ["All", "Web"],
-    gitUrl: "",
-    previewUrl: "#",
-  },
-  {
-    id: 2,
-    title: "TechHouse eCommerce",
-    description: "Feature Rich eCommerce Store for Tech Gadgets",
-    image: "/images/projects/techhouse.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/BDunnCode/nextjsecommerce5",
-    previewUrl: "https://nextjsecommerce5.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "ZooSocial Social Media",
-    description: "Social Media Website Populated by Animals",
-    image: "/images/projects/zoosocial.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/BDunnCode/FullStackSocial",
-    previewUrl: "https://full-stack-social.vercel.app/",
-  },
-  {
-    id: 4,
-    title: "Bespoke eCommerce",
-    description: "Stylish eCommerce Site for High-end Garments",
-    image: "/images/projects/bespoke.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/BDunnCode/ecommerce-app",
-    previewUrl: "https://ecommerce-app-omega-eight.vercel.app/",
-  },
-];
+const query = `
+  *[_type == "project"] {
+    _id,
+    title,
+    description,
+    techStack,
+    repoUrl,
+    "image": image.asset->url,    
+  }
+`
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
+  const [projects, setProjects] = useState([]);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
+  console.log(client)
 
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
+  useEffect(() => {
+    async function fetchProjects() {
+      try {
+        const data = await client.fetch(query)
+        setProjects(data);
+      } catch (error) {
+        console.error("Failed to fetch projects:", error)
+      }
+    }
+
+    fetchProjects();
+  }, []);
+
+  console.log(projects)
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -66,25 +47,8 @@ const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-      </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
+        {projects.map((project, index) => (
           <motion.li
             key={index}
             variants={cardVariants}
@@ -97,8 +61,7 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
+              repoUrl={project.repoUrl}
             />
           </motion.li>
         ))}

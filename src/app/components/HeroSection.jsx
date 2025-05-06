@@ -24,11 +24,11 @@ const HeroSection = () => {
               sequence={[
                 "Nudennie White",
                 1000,
+                "an Android Developer",
+                1000,
                 "Experienced",
                 1000,
                 "a Project Manager",
-                1000,
-                "an Android Developer",
                 1000,
               ]}
               wrapper="span"
@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div>
             <Link
               href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-primary-500 hover:bg-yellow-200 hover:text-black text-white"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-primary-500 hover:bg-yellow-600 hover:text-black text-white"
             >
               Hire Me
             </Link>
